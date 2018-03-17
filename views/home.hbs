@@ -1,22 +1,12 @@
+<header class="container-fluid home-header">
+    <section class="container">
+        <h1>Handlebars templates scaffolding</h1>
+    </section>
+</header>
 <section class="container">
     <div class="row">
-        <div class="box-container" id="list-elements">
-            {{#each listElements}}
-                <article class="box">
-                    <img src="/img/face_smile.png" alt="smile icon">
-                    <p>
-                        {{name}}
-                    </p>
-                    <div class="controls">
-                        <img src="/img/arrow_up.svg" class="arrow-up" alt="cross">
-                        <img src="/img/arrow_down.svg" class="arrow-down"alt="cross">
-                        <img src="/img/cross.svg" class="cross" alt="cross">
-                    </div>
-                </article>
-            {{/each}}
-        </div>
-    </div>
-</ul>
+        {{#each listElements}}
+            {{#include "ui-box" this}}{{/include}}
+        {{/each}}
     </div>
 </section>
-<script type="text/javascript" src="./js/index.js"></script>

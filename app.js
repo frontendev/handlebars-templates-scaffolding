@@ -1,7 +1,7 @@
-var express = require('express');
-var exphbs  = require('express-handlebars');
-
-var app = express();
+const express = require('express');
+const exphbs  = require('express-handlebars');
+const fs = require('fs');
+const app = express();
 
 const helpers = {};
 const handlebars = exphbs.create({
@@ -17,7 +17,7 @@ handlebars.registerHelper = (name, cb) => {
 
 handlebars.registerHelper('include', function include(name, opts) {
   try {
-    handlebars.templates[name] = handlebars.handlebars.compile(fs.readFileSync(`./views/parts/${name}.hbs`, 'UTF-8'));
+    handlebars.templates[name] = handlebars.handlebars.compile(fs.readFileSync(`./views/components/${name}.hbs`, 'UTF-8'));
   } catch (err) {
     console.error(err);
   }
@@ -32,7 +32,8 @@ app.get('/', function (req, res) {
     listElements: [
       { 'name': 'some random text' },
       { 'name': 'some random text2' },
-      { 'name': 'some random text 3' }
+      { 'name': 'some random text 3' },
+      { 'name': 'some random text 4' }
     ]
   });
 });
@@ -41,8 +42,6 @@ app.get('/about', function (req, res) {
   res.render('about');
 });
 
-
-
-app.listen(3000, function () {
-  console.log('App listening on port 3000!');
+app.listen(1184, function () {
+  console.log('App listening on port 1184');
 });

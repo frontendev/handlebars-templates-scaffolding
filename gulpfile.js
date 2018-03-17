@@ -29,7 +29,9 @@ gulp.task('js', () => gulp.src([
   .pipe(gulp.dest(destJs)));
 
 // Run server
-gulp.task('server:start', server.listen({ path: './app.js' }));
+gulp.task('server:start', server.listen({
+  path: './app.js'
+}));
 
 gulp.task('watch', () => {
   gulp.watch('./dev/styles/**/*.sass', ['styles']);

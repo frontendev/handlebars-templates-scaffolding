@@ -1,18 +1,38 @@
+// MAIN FONT
+// =========
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600')
+
+// RESET STYLES
+// ===========
 @import "meyer-reset"
 
-// VARIABLES
-
-$medium-grey: #cccccc
-$dark-grey: #424242
-
-// MIXINS
-=ellipsis
-	white-space: nowrap
-	overflow: hidden
-	text-overflow: ellipsis
+// HELPERS
+// ========
+@import "variables"
+@import "mixins"
 
 body
-	font-family: Arial, Helvetica, sans-serif
+	font-family: 'Titillium Web', sans-serif
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+.container-fluid
+	width: 100%
+	margin: 0
+
+.home-header
+	height: 250px
+	background-color: red
+	.container
+		height: 100%
+		+flex
+		align-items: flex-end
+		justify-content: center
+	h1
+		color: $white
+		font-size: 32px
+		font-weight: bold
+		margin-bottom: 25px
 
 .container
   box-sizing: border-box
@@ -25,18 +45,22 @@ body
   @media only screen and (max-width: 1200px)
     padding: 0 4rem
 
+$side-margin: 10px
 .row
 	display: flex
 	flex-wrap: nowrap
-	flex-direction: column
+	flex-direction: row
 	align-items: flex-start
 	justify-content: center
+	margin-left: -$side-margin
+	margin-right: -$side-margin
 
-.box
-	max-width: 300px
-	width: 300px
-	border: 1px solid $medium-grey
+
+.ui-box
+	width: 25%
 	padding: 10px
+	border: 1px solid $medium-grey
+	margin: $side-margin
 	height: 40px
 	box-sizing: border-box
 	display: flex
@@ -48,20 +72,4 @@ body
 		width: 20px
 		height: 20px
 		margin-right: 10px
-	p
-		width: 100%
-		align-items: center
-		font-size: 14px
-		color: $dark-grey
-		pointer-events: none
-		display: block
 
-		+ellipsis
-	.controls
-		display: flex
-		align-items: center
-		>img
-			width: 12px
-			height: 12px
-			margin: 0 5px
-			cursor: pointer
