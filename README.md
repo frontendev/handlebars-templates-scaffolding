@@ -1,6 +1,7 @@
 # Handlebars templates scaffolding
 
 This a local enviroment to give you all you need to start developing Front end. Specially useful for Job interview challenges
+Based on https://github.com/ericf/express-handlebars
 
 ## Built With
   - Express
