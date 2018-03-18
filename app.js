@@ -2,6 +2,7 @@ const express = require('express');
 const exphbs  = require('express-handlebars');
 const fs = require('fs');
 const app = express();
+const home = require('./dev/mws/home');
 
 const helpers = {};
 const handlebars = exphbs.create({
@@ -27,21 +28,9 @@ handlebars.registerHelper('include', function include(name, opts) {
 app.engine('.hbs', handlebars.engine);
 app.set('view engine', '.hbs');
 app.use(express.static('./statics'));
-app.get('/', function (req, res) {
-  res.render('home', {
-    listElements: [
-      { 'name': 'some random text' },
-      { 'name': 'some random text2' },
-      { 'name': 'some random text 3' },
-      { 'name': 'some random text 4' }
-    ]
-  });
-});
 
+app.get('/', home);
 app.get('/about', function (req, res) {
   res.render('about');
 });
-
-app.listen(1184, function () {
-  console.log('App listening on port 1184');
-});
+app.listen(1184);

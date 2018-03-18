@@ -1,38 +1,39 @@
 // MAIN FONT
 // =========
-@import url('https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600')
+
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600,700')
+
 
 // RESET STYLES
 // ===========
 @import "meyer-reset"
 
+
 // HELPERS
-// ========
+// =======
+
+$side-margin: 10px
+
+@import "global-styles"
 @import "variables"
 @import "mixins"
 
-body
-	font-family: 'Titillium Web', sans-serif
-	-webkit-font-smoothing: antialiased
-	-moz-osx-font-smoothing: grayscale
+
+// COMPONENTS
+// ==========
+
+@import "ui-box"
+
+
+// SECTIONS
+// ========
+
+@import "home"
+
 
 .container-fluid
 	width: 100%
 	margin: 0
-
-.home-header
-	height: 250px
-	background-color: red
-	.container
-		height: 100%
-		+flex
-		align-items: flex-end
-		justify-content: center
-	h1
-		color: $white
-		font-size: 32px
-		font-weight: bold
-		margin-bottom: 25px
 
 .container
   box-sizing: border-box
@@ -40,36 +41,15 @@ body
   position: relative
   max-width: 1080px
   @media screen and (max-width: 768px)
-    margin: 0 2rem
+    margin: 0 20px
     padding: 0 !important
   @media only screen and (max-width: 1200px)
-    padding: 0 4rem
+    padding: 0 40px
 
-$side-margin: 10px
 .row
 	display: flex
 	flex-wrap: nowrap
 	flex-direction: row
-	align-items: flex-start
-	justify-content: center
-	margin-left: -$side-margin
-	margin-right: -$side-margin
 
 
-.ui-box
-	width: 25%
-	padding: 10px
-	border: 1px solid $medium-grey
-	margin: $side-margin
-	height: 40px
-	box-sizing: border-box
-	display: flex
-	cursor: default
-	&.selected-one
-		background-color: gray
-	>img
-		margin-top: -1px // just optical adjustment for this image
-		width: 20px
-		height: 20px
-		margin-right: 10px
 

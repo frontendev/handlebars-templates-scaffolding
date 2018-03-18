@@ -1,0 +1,24 @@
+.row-box
+	display: flex
+	flex-wrap: nowrap
+	flex-direction: row
+	align-items: flex-start
+	justify-content: center
+	margin-left: -$side-margin
+	margin-right: -$side-margin
+
+
+.ui-box
+	width: 25%
+	margin: $side-margin
+	box-sizing: border-box
+	+flex
+	flex-direction: column
+	cursor: default
+	> header
+		width: 100%
+		height: 185px
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
